@@ -341,7 +341,7 @@ class App(customtkinter.CTk):
                 MailItem = olApp.CreateItem(0)
                 MailItem.Subject = 'Invoice - ' + str(ws.max_row - 1)
                 MailItem.BodyFormat = 1
-                MailItem.Body = 'Dear ' + self.frames[0].inputs[0].get() + ',\n\nI hope your well. Please see attached invoice number - ' + str(ws.max_row - 1) + ' for the work done at, ' + self.frames[0].inputs[3].get() + ' which is due for payment on ' + new_due_date + '.\n\nAny issue please contact me on my mobile.\n\nKind Regards,\nTerry Brewer'
+                MailItem.Body = 'Dear ' + self.frames[0].inputs[0].get() + ',\n\nI hope your well. Please see attached invoice number - ' + str(ws.max_row - 1) + ' for the work done at, ' + self.frames[0].inputs[3].get() + ' which is due for payment on ' + new_due_date + '.\n\nAny issue please contact me on my mobile.\n\nKind Regards,\n' #enter users name here
                 #MailItem.Sender = #input your email address here
                 MailItem.To = self.frames[0].inputs[1].get()
                 filename = 'Invoice-' + str(ws.max_row - 1) + '.pdf'
