@@ -4,6 +4,7 @@ import jinja2
 import pdfkit
 import win32com.client as win32
 import shutil
+import logging
 from datetime import timedelta
 from datetime import date
 from os.path import expanduser
@@ -219,9 +220,9 @@ class App(customtkinter.CTk):
 
         if not os.path.exists(expanduser('~/Documents/Invoices')):
             os.makedirs(expanduser('~/Documents/Invoices'))
-            print('Folder not found so new folder created')
+            logging.warning('Folder not found so new folder created')
         else:
-            print('Folder Found')
+            logging.info('Folder Found')
         self.title("Invoice Creator")
         self.geometry("1080x640")
         self.grid_columnconfigure(0, weight=1)
